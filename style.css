@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  background-color: lightblue;
+  padding: 5px;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "h1 h1 h1"
+    "navBar navBar navBar"
+    " banner banner off1 "
+    " banner banner off2"
+    "side-menu main main"
+    "recent main main"
+    "tags main main"
+    "footer footer footer";
+}
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+h1 {
+  background-color: blue;
+  color: white;
+  height: 60px;
+  grid-area: h1;
+}
+
+header {
+  background-color: blueviolet;
+  height: auto;
+  grid-area: navBar;
+}
+.banner {
+  background: linear-gradient(30deg, pink, yellow, blue, green);
+  min-height: 10vh;
+  grid-area: banner;
+}
+
+.off1 {
+  background: radial-gradient(red, pink, yellow);
+  height: auto;
+  grid-area: off1;
+}
+
+.off2 {
+  background: linear-gradient(to right, green, blueviolet);
+  min-height: 10vh;
+  grid-area: off2;
+}
+.side-menu {
+  background: linear-gradient(to left, black, white);
+  min-height: auto;
+  grid-area: side-menu;
+}
+
+.main {
+  grid-area: main;
+  background: yellowgreen;
+}
+.recent {
+  background-color: yellowgreen;
+  height: 60px;
+  grid-area: recent;
+}
+
+.tags {
+  background-color: blanchedalmond;
+
+  grid-area: tags;
+}
+.footer {
+  grid-area: footer;
+  background: red;
+}
+
+/* media QueryFor IPad and Tablets*/
+@media (676px < width<= 1024px) {
+  .wrapper {
+    background-color: lightblue;
+    padding: 5px;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "h1 h1 "
+      "navBar navBar "
+      " banner banner  "
+      "off1 off2 "
+      "side-menu side-menu"
+      "main main"
+      " recent tags"
+      "footer footer ";
+  }
+}
+/* For Mobile Screen*/
+@media screen and (max-width: 676px) {
+  .wrapper {
+    background-color: lightblue;
+    padding: 5px;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h1"
+      "navBar"
+      "banner"
+      "off1"
+      "off2"
+      "side-menu"
+      "main"
+      "recent"
+      "tags"
+      "footer";
+  }
+}
